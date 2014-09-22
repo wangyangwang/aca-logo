@@ -2,15 +2,18 @@ class circle {
   float xpos, ypos;
   float diameter;
   PVector[] centers;
-  // ArrayList<child> children;
+  child[] children;
+  color c;
   int childrenQuantity;
 
-  circle ( float _diameter, float _xpos, float _ypos, int _childrenQuantity ) {
+  circle ( float _diameter, float _xpos, float _ypos, int _childrenQuantity, color _c ) {
     xpos = _xpos;
     ypos = _ypos;
     diameter = _diameter;
     childrenQuantity = _childrenQuantity;
     centers = new PVector[childrenQuantity];
+    children = new child[childrenQuantity];
+    c = _c;
   }
 
   void getCenters() {
@@ -23,17 +26,18 @@ class circle {
   }
 
   void show() {
-    for ( int i=0; i<centers.length; i++) {
+    for ( int i=0; i < children.length; i++) {
       noFill();
-      stroke(0);
+      stroke(c);
       strokeWeight(0.1);
-      ellipse(centers[i].x, centers[i].y, 40, 40);
+      children[i] = new child(centers[i].x, centers[i].y, c);
+      children[i].show();
     }    
   }
 
 
   void keepQuantity() {
-    println(centers.length);
+
   }
 }
 

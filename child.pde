@@ -1,20 +1,20 @@
-//class child {
-//  float diameter;
-//  float xpos, ypos; 
-//  color mycolor; 
-//
-//  child (float _xpos, float _ypos, color _mycolor, float _diameter) {  
-//    xpos = _xpos;
-//    ypos = _ypos;
-//    mycolor = _mycolor;
-//    diameter = _diameter;
-//  } 
-//
-//  void show() { 
-//    noFill();
-//    stroke(mycolor);
-//    strokeWeight(1);
-//    ellipse(center.x, center.y, diameter, diameter);
-//  }
-//} 
+class child {
+  float diameter = 100;
+  float xpos, ypos; 
+  color myColor; 
+  float strokeW = 0.2;
+
+  child (float _xpos, float _ypos, color _myColor) {  
+    xpos = _xpos;
+    ypos = _ypos;
+    myColor = _myColor;
+  } 
+
+  void show() { 
+    noFill();
+    stroke(myColor);
+    strokeWeight(strokeW);
+    ellipse(xpos, ypos, diameter, diameter);
+  }
+} 
 
