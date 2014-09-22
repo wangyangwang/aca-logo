@@ -1,17 +1,20 @@
-PVector v1;
-child h1;
-color c = color(255, 255, 255);
+// child c1;
+// color c = color(255, 255, 255);
+circle c1;
 
 void setup() {
   smooth();
-  size(600,600,"processing.core.PGraphicsRetina2D");
-  v1 = new PVector(mouseX,mouseY);
-  h1 = new child(v1,c,500);
+  size(600, 600, "processing.core.PGraphicsRetina2D"); 
+  c1 = new circle(width/2, width/2, height/2, 300);
 }
 
 void draw() {
-  h1.center = new PVector(mouseX,mouseY);
-  background(0);
-  h1.show();
+  background(255);
+  pushMatrix();
+  translate(width/2, height/2);
+  c1.getCenters();
+  c1.show();
+  c1.keepQuantity();
+  popMatrix();
 }
 
